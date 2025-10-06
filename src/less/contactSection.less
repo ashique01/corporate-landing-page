@@ -1,0 +1,107 @@
+@import "../variables.less";
+
+.contact-section {
+  display: flex;
+  max-width: 1033px;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 0;      // section padding
+  margin: 0 auto;
+
+  .contact-title {
+    color: #2B2B2B;
+    text-align: center;
+    font-family: "Segoe UI";
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 105%;
+    margin: 0 0 72px 0;   // ✅ 72px gap below the title
+  }
+
+.contact-content {
+  display: flex;
+  justify-content: center;   // ✅ centers both blocks instead of pushing apart
+  align-items: center;
+  gap: 50px;                 // ✅ controls horizontal spacing
+  width: 100%;
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 64px;
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .contact-icon {
+          width: 28px;
+          height: 28px;
+        }
+
+        span {
+          color: #2B2B2B;
+          font-family: "Segoe UI";
+          font-size: 20px;
+          font-weight: 400;
+          line-height: 120%;
+          letter-spacing: 0.4px;
+        }
+      }
+    }
+
+    .contact-qr {
+      img {
+        width: 220px;
+        height: 220px;
+        object-fit: contain;
+        margin: 0;         // ✅ no manual margin, use gap instead
+      }
+    }
+  }
+
+  /* ✅ Responsive */
+  @media (max-width: 992px) {
+    width: 100%;
+    padding: 0 20px;
+
+    .contact-title {
+      margin-bottom: 48px;  // slightly smaller spacing for mobile
+    }
+
+    .contact-content {
+      flex-direction: column;
+      gap: 32px; // ✅ smaller gap when stacked
+      text-align: center;
+
+      .contact-info {
+        align-items: flex-start;
+        text-align: center;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .contact-title {
+      font-size: 32px;
+      margin-bottom: 32px;
+    }
+
+    .contact-content {
+      .contact-info {
+        gap: 32px;
+
+        .contact-item span {
+          font-size: 18px;
+        }
+      }
+
+      .contact-qr img {
+        width: 180px;
+        height: 180px;
+      }
+    }
+  }
+}

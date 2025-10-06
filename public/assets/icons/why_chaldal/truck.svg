@@ -1,0 +1,10 @@
+<svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.9997 23.5H21.4997C23.1497 23.5 24.4997 22.15 24.4997 20.5V5.5H10.9996C8.74964 5.5 6.78465 6.74499 5.76465 8.57499" stroke="#9747FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5 28C5 30.49 7.01 32.5 9.50001 32.5H11C11 30.85 12.35 29.5 14 29.5C15.65 29.5 17 30.85 17 32.5H23C23 30.85 24.35 29.5 26 29.5C27.65 29.5 29 30.85 29 32.5H30.5C32.99 32.5 35 30.49 35 28V23.5H30.5C29.675 23.5 29 22.825 29 22V17.5C29 16.675 29.675 16 30.5 16H32.435L29.87 11.515C29.33 10.585 28.34 10 27.26 10H24.5V20.5C24.5 22.15 23.15 23.5 21.5 23.5H20" stroke="#9747FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13.9999 35.5C15.6567 35.5 16.9999 34.1569 16.9999 32.5C16.9999 30.8431 15.6567 29.5 13.9999 29.5C12.343 29.5 10.9999 30.8431 10.9999 32.5C10.9999 34.1569 12.343 35.5 13.9999 35.5Z" stroke="#9747FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M26 35.5C27.6569 35.5 29 34.1569 29 32.5C29 30.8431 27.6569 29.5 26 29.5C24.3431 29.5 23 30.8431 23 32.5C23 34.1569 24.3431 35.5 26 35.5Z" stroke="#9747FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M34.9999 20.5V23.5H30.4999C29.6749 23.5 28.9999 22.825 28.9999 22V17.5C28.9999 16.675 29.6749 16 30.4999 16H32.4349L34.9999 20.5Z" stroke="#9747FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5 14.5H14" stroke="#9747FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5 19H11" stroke="#9747FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5 23.5H8" stroke="#9747FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

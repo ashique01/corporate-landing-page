@@ -1,0 +1,106 @@
+@import "../variables.less";
+
+.why-section {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 72px;
+  margin: 72px auto;
+  max-width: 100%;
+  padding: 48px 124px 64px 124px;
+  background: #F7F5FB;
+
+  .why-title {
+    color: #2B2B2B;
+    text-align: center;
+    font-family: "Segoe UI";
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 105%;
+    margin: 0;
+  }
+
+  .why-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .why-card {
+    box-sizing: border-box;
+    flex: 0 0 350px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 32px 24px;
+    gap: 12px;
+    border-radius: 16px;
+    background: #fff;
+    transition: transform 0.2s ease;
+
+    .why-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 12px;
+    }
+
+    .why-card-title {
+      color: #2B2B2B;
+      font-family: "Segoe UI";
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 700;
+      line-height: 105%;
+      margin: 0;
+    }
+
+    .why-card-description {
+      color: #2B2B2B;
+      font-family: "Segoe UI";
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 130%;
+      margin: 0;
+    }
+  }
+
+  /* Tablet ≤992px */
+  @media (max-width: 992px) {
+    padding: 48px 64px;
+    .why-card {
+      flex: 1 1 300px;
+      max-width: none;
+    }
+  }
+
+  /* Large devices: 993px – 1145px → EXACTLY 3 cards per row */
+  @media (min-width: 993px) and (max-width: 1145px) {
+    padding: 48px 32px 64px 32px; // container padding
+    .why-card {
+      flex: 0 0 calc((100% - 32px*2 - 24px*2)/3); // 3 cards + 2 gaps + padding
+      max-width: calc((100% - 32px*2 - 24px*2)/3);
+    }
+  }
+
+  /* Medium-Wide devices: 1146px – 1345px */
+  @media (min-width: 1146px) and (max-width: 1345px) {
+    padding: 48px 24px 64px 24px;
+    .why-card {
+      flex: 1 1 295px;
+      max-width: none;
+    }
+  }
+
+  /* Mobile ≤600px */
+  @media (max-width: 600px) {
+    padding: 32px 20px;
+    .why-card {
+      flex: 1 1 100%;
+      max-width: 520px;
+    }
+  }
+}

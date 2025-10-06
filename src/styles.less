@@ -1,0 +1,26 @@
+/* Global Resets */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* This is a failsafe, the goal is to fix the root cause */
+  font-family: "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Import all the section styles */
+@import "./less/heroSection.less";
+@import "./less/serviceSection.less";
+@import "./less/whyChooseChaldal.less";
+@import "./less/processSection.less";
+@import "./less/clientsSection.less";
+@import "./less/testimonial.less";
+@import "./less/faqSection.less";
+@import "./less/orderForm.less";
+@import "./less/contactSection.less";
+@import "./less/footer.less";

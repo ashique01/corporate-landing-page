@@ -1,0 +1,13 @@
+primary button
+--------------
+
+#7533CB (deafault)          text color : #ffffff	
+#5D1AB4 (when hover)	    size : 180hug * 49hug
+#49099C (When submitting)
+
+Secondary Button
+----------------
+
+##FFFFFF (deafault) 		text color : #7533CB
+#F6F0FF (when hover)		size: 206 hug * 49 hug
+#F0E5FF(When submitting)

@@ -1,0 +1,272 @@
+// Define colors based on provided variables
+@bg: #F7F5FB;
+@card-bg: #FFFFFF;
+@text-color: #2B2B2B;
+@muted: #6B6B6B;
+@accent: #7533CB;
+@dot-bg: #D2CFD8;
+@arrow-border: #E7DDFB;
+@arrow-hover-border: #D9C9FA;
+@arrow-hover-bg: #F6F0FF;
+@shadow-color: rgba(117, 51, 203, 0.1);
+
+// A smoother easing function for animations
+@brand-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+.testimonial-section {
+  display: flex;
+  padding: 80px 24px; // Simplified padding
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  background: @bg;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden; // Prevent horizontal scroll on mobile
+
+  @media (min-width: 1024px) {
+    padding: 100px 124px;
+  }
+
+  .testimonial-title {
+    color: @text-color;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+
+    @media (min-width: 768px) {
+      font-size: 40px;
+    }
+  }
+
+  .testimonial-carousel {
+    position: relative;
+    display: flex;
+    align-items: center; // Vertically center the slides
+    justify-content: center; // Horizontally center the active slide
+    width: 100%;
+    max-width: 1200px;
+    min-height: 520px;
+
+    /* Gradient Cutoff Overlays - Hidden on mobile */
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50px;
+      z-index: 5;
+      pointer-events: none;
+      display: none; // Hidden by default
+
+      @media (min-width: 768px) {
+        display: block; // Visible on tablet and up
+        width: 100px;
+      }
+
+      @media (min-width: 1024px) {
+        width: 160px;
+      }
+    }
+
+    &::before {
+      left: 0;
+      background: linear-gradient(90deg, @bg 10%, rgba(247, 245, 251, 0) 100%);
+    }
+
+    &::after {
+      right: 0;
+      background: linear-gradient(270deg, @bg 10%, rgba(247, 245, 251, 0) 100%);
+    }
+
+    .testimonial-slide {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      padding: 40px 32px;
+      border-radius: 16px;
+      background: @card-bg;
+      box-shadow: 0 8px 24px -4px @shadow-color;
+      text-align: center;
+      width: 90%;
+      max-width: 440px;
+
+      // The key to smooth animation
+      transition: transform 0.5s @brand-ease, opacity 0.5s @brand-ease;
+
+      &.hidden {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.7);
+        pointer-events: none; // Prevent interaction with off-screen cards
+      }
+
+      &.active {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        z-index: 2;
+      }
+
+      &.prev,
+      &.next {
+        opacity: 0.4;
+        transform: translate(-50%, -50%) scale(0.85);
+        z-index: 1;
+        // Hide on mobile for a cleaner look
+        display: none;
+      }
+
+      @media (min-width: 1024px) {
+        &.prev {
+          display: flex;
+          transform: translate(-120%, -50%) scale(0.85);
+        }
+
+        &.next {
+          display: flex;
+          transform: translate(20%, -50%) scale(0.85);
+        }
+      }
+
+      .testimonial-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid @card-bg;
+        margin-top: -90px; // Pull the image up to overlap the card
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+        @media (min-width: 768px) {
+          width: 120px;
+          height: 120px;
+          margin-top: -100px;
+        }
+      }
+
+      .testimonial-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .testimonial-quote {
+        font-size: 16px;
+        font-style: italic;
+        line-height: 1.6;
+        color: @text-color;
+        line-height: 105%;
+        margin: 0;
+
+        // Quotes are more stylized
+        &::before {
+          content: '';
+        }
+
+        &::after {
+          content: '';
+        }
+      }
+
+      .testimonial-name {
+        font-size: 20px;
+        font-weight: 700;
+        font-style: normal;
+        line-height: 105%;
+        color: @text-color;
+        margin: 0;
+        margin-top: 12px;
+      }
+
+      .testimonial-role {
+        font-style: normal;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 105%;
+        color: @text-color;
+        margin: 0;
+      }
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 6;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid @arrow-border;
+      background: @card-bg;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      padding: 0;
+      fill: rgba(255, 255, 255, 0.80);
+
+      &:hover {
+        background: @arrow-hover-bg;
+        border-color: @arrow-hover-border;
+        transform: translateY(-50%) scale(1.05);
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+
+      // Adjust positioning for a cleaner look
+      &.left {
+        left: 0;
+      }
+
+      &.right {
+        right: 0;
+      }
+
+      @media(min-width: 1200px) {
+        &.left {
+          left: -24px;
+        }
+
+        &.right {
+          right: -24px;
+        }
+      }
+    }
+  }
+
+  .testimonial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: @dot-bg;
+      cursor: pointer;
+      transition: all 0.25s @brand-ease;
+      border: none; // Reset button styles
+      padding: 0;
+
+      &.active {
+        background: @accent;
+        transform: scale(1.25);
+      }
+
+      &:hover:not(.active) {
+        background: darken(@dot-bg, 15%);
+      }
+    }
+  }
+}

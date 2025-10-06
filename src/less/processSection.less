@@ -1,0 +1,98 @@
+@import "../variables.less";
+
+.process-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin: 72px auto;
+  max-width: 1100px;
+  padding: 0 20px;
+
+  .process-title {
+    font-family: "Segoe UI";
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 105%;
+    color: #2B2B2B;
+    text-align: center;
+    margin: 0;
+  }
+
+  .process-grid {
+    display: flex;                 // ✅ flex instead of grid
+    justify-content: center;       // ✅ keep all 3 centered
+    gap: 32px;                     // ✅ horizontal gap
+    flex-wrap: nowrap;             // ✅ always one row
+    width: 100%;
+  }
+
+  .process-card {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 24px;
+    gap: 12px;
+    border-radius: 12px;
+    background: #FBF9FF;           // ✅ softer background like mock
+    text-align: center;
+    transition: transform 0.2s ease;
+
+    .process-number {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #7533CB;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Segoe UI";
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .process-card-title {
+      font-family: "Segoe UI";
+      font-size: 24px;
+      font-style: italic;
+      font-weight: 700;
+      color: #2B2B2B;
+      margin: 0;
+      line-height: 105%;
+    }
+
+    .process-card-description {
+      font-family: "Segoe UI";
+      font-size: 16px;
+      font-weight: 400;
+      color: #2B2B2B;
+      line-height: 130%;
+      margin: 0;
+    }
+  }
+}
+@media (max-width: 992px) {
+  .process-section .process-grid {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .process-section {
+    margin: 48px auto;
+    .process-title {
+      font-size: 32px;
+    }
+    .process-grid {
+      gap: 16px;
+    }
+    .process-card {
+      width: 100%;
+    }
+  }
+}
+
